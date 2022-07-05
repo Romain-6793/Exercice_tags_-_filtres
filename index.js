@@ -13,9 +13,10 @@ let colourFilter = []
 let shapeFilter = []
 let sizeFilter = []
 let activeFilters = []
+let tagsArray = []
 
 
-// let tagsArray = []
+
 
 function displayObjects(data) {
 
@@ -28,6 +29,12 @@ function displayObjects(data) {
     })
 }
 
+// function resetTags() {
+//     document.querySelectorAll(".tag").forEach(function (tag) {
+//         tag.parentElement.removeChild(tag)
+//     })
+// }
+
 function launchFilterByColour() {
     colourDropdown.addEventListener("change", (e) => {
         if (e.target.value === "red") {
@@ -35,7 +42,8 @@ function launchFilterByColour() {
             if (!document.getElementById("red-tag")) {
                 const redTag = tagFlex.appendChild(createTag("Rouge"))
                 redTag.setAttribute("id", "red-tag")
-                // tagsArray.push(redTag)
+                tagsArray.push(redTag)
+                console.log(tagsArray)
             }
         }
         if (e.target.value === "orange") {
@@ -43,7 +51,7 @@ function launchFilterByColour() {
             if (!document.getElementById("orange-tag")) {
                 const orangeTag = tagFlex.appendChild(createTag("Orange"))
                 orangeTag.setAttribute("id", "orange-tag")
-                // tagsArray.push(orangeTag)
+                tagsArray.push(orangeTag)
             }
         }
         if (e.target.value === "green") {
@@ -51,7 +59,7 @@ function launchFilterByColour() {
             if (!document.getElementById("green-tag")) {
                 const greenTag = tagFlex.appendChild(createTag("Vert"))
                 greenTag.setAttribute("id", "green-tag")
-                // tagsArray.push(greenTag)
+                tagsArray.push(greenTag)
             }
         }
 
@@ -65,7 +73,8 @@ function launchFilterBySize() {
             if (!document.getElementById("small-tag")) {
                 const smallTag = tagFlex.appendChild(createTag("Petit"))
                 smallTag.setAttribute("id", "small-tag")
-                // tagsArray.push(smallTag)
+                tagsArray.push(smallTag)
+
             }
         }
         if (e.target.value === "medium") {
@@ -73,7 +82,8 @@ function launchFilterBySize() {
             if (!document.getElementById("medium-tag")) {
                 const mediumTag = tagFlex.appendChild(createTag("Moyen"))
                 mediumTag.setAttribute("id", "medium-tag")
-                // tagsArray.push(mediumTag)
+                tagsArray.push(mediumTag)
+
             }
         }
         if (e.target.value === "large") {
@@ -81,7 +91,8 @@ function launchFilterBySize() {
             if (!document.getElementById("large-tag")) {
                 const largeTag = tagFlex.appendChild(createTag("Grand"))
                 largeTag.setAttribute("id", "large-tag")
-                // tagsArray.push(largeTag)
+                tagsArray.push(largeTag)
+
             }
         }
 
@@ -96,7 +107,7 @@ function launchFilterByShape() {
             if (!document.getElementById("circle-tag")) {
                 const circleTag = tagFlex.appendChild(createTag("Cercle"))
                 circleTag.setAttribute("id", "circle-tag")
-                // tagsArray.push(circleTag)
+                tagsArray.push(circleTag)
             }
         }
         if (e.target.value === "rectangle") {
@@ -105,7 +116,7 @@ function launchFilterByShape() {
             if (!document.getElementById("rectangle-tag")) {
                 const rectangleTag = tagFlex.appendChild(createTag("Rectangle"))
                 rectangleTag.setAttribute("id", "rectangle-tag")
-                // tagsArray.push(rectangleTag)
+                tagsArray.push(rectangleTag)
             }
         }
         if (e.target.value === "square") {
@@ -114,7 +125,7 @@ function launchFilterByShape() {
             if (!document.getElementById("square-tag")) {
                 const squareTag = tagFlex.appendChild(createTag("Carré"))
                 squareTag.setAttribute("id", "square-tag")
-                // tagsArray.push(squareTag)
+                tagsArray.push(squareTag)
             }
         }
 
@@ -131,6 +142,11 @@ function redFilter(objArr) {
     }
     colourFilter.push(redObjects)
     console.log(colourFilter)
+    setActiveFilters()
+    console.log(activeFilters)
+    changeSection()
+    // simplifyArr(activeFilters)
+    displayObjects(activeFilters)
 
 }
 
@@ -145,6 +161,8 @@ function orangeFilter(objArr) {
     }
     colourFilter.push(orangeObjects)
     console.log(colourFilter)
+    setActiveFilters()
+    console.log(activeFilters)
 }
 
 function greenFilter(objArr) {
@@ -158,6 +176,8 @@ function greenFilter(objArr) {
     }
     colourFilter.push(greenObjects)
     console.log(colourFilter)
+    setActiveFilters()
+    console.log(activeFilters)
 }
 
 function smallFilter(objArr) {
@@ -171,6 +191,8 @@ function smallFilter(objArr) {
     }
     sizeFilter.push(smallObjects)
     console.log(sizeFilter)
+    setActiveFilters()
+    console.log(activeFilters)
 }
 
 function mediumFilter(objArr) {
@@ -184,6 +206,8 @@ function mediumFilter(objArr) {
     }
     sizeFilter.push(mediumObjects)
     console.log(sizeFilter)
+    setActiveFilters()
+    console.log(activeFilters)
 }
 
 function largeFilter(objArr) {
@@ -197,6 +221,8 @@ function largeFilter(objArr) {
     }
     sizeFilter.push(largeObjects)
     console.log(sizeFilter)
+    setActiveFilters()
+    console.log(activeFilters)
 }
 
 function circleFilter(objArr) {
@@ -209,6 +235,8 @@ function circleFilter(objArr) {
     }
     shapeFilter.push(circleObjects)
     console.log(shapeFilter)
+    setActiveFilters()
+    console.log(activeFilters)
 }
 
 function rectangleFilter(objArr) {
@@ -222,6 +250,8 @@ function rectangleFilter(objArr) {
     }
     shapeFilter.push(rectangleObjects)
     console.log(shapeFilter)
+    setActiveFilters()
+    console.log(activeFilters)
 }
 
 function squareFilter(objArr) {
@@ -235,6 +265,8 @@ function squareFilter(objArr) {
     }
     shapeFilter.push(squareObjects)
     console.log(shapeFilter)
+    setActiveFilters()
+    console.log(activeFilters)
 }
 
 function changeSection() {
@@ -253,8 +285,13 @@ function createTag(label) {
     closeBtn.setAttribute("data-item", label)
     closeBtn.addEventListener("click", closeTag)
 
-    function closeTag() {
+    function closeTag(e) {
         closeBtn.parentElement.remove()
+        const value = e.target.getAttribute("data-item")
+        const index = tagsArray.indexOf(value)
+        console.log(index)
+        tagsArray.splice(index, 1)
+        console.log(tagsArray)
     }
 
     div.appendChild(span)
@@ -270,6 +307,59 @@ function resetDisplayObjects() {
     displayObjects(objects)
 }
 
+function setActiveFilters() {
+    if (colourFilter === [] && sizeFilter === [] && shapeFilter === []) {
+        activeFilters = []
+        activeFilters = simplifyArr(activeFilters)
+        activeFilters = simplifyArr(activeFilters)
+    }
+    if (colourFilter !== [] && sizeFilter === [] && shapeFilter === []) {
+        activeFilters = [colourFilter]
+        activeFilters = simplifyArr(activeFilters)
+        activeFilters = simplifyArr(activeFilters)
+    }
+    if (colourFilter === [] && sizeFilter !== [] && shapeFilter === []) {
+        activeFilters = [sizeFilter]
+        activeFilters = simplifyArr(activeFilters)
+        activeFilters = simplifyArr(activeFilters)
+    }
+    if (colourFilter === [] && sizeFilter === [] && shapeFilter !== []) {
+        activeFilters = [shapeFilter]
+        activeFilters = simplifyArr(activeFilters)
+        activeFilters = simplifyArr(activeFilters)
+    }
+    if (colourFilter !== [] && sizeFilter !== [] && shapeFilter === []) {
+        activeFilters = [colourFilter, sizeFilter]
+        activeFilters = simplifyArr(activeFilters)
+        activeFilters = simplifyArr(activeFilters)
+    }
+    if (colourFilter !== [] && sizeFilter === [] && shapeFilter !== []) {
+        activeFilters = [colourFilter, shapeFilter]
+        activeFilters = simplifyArr(activeFilters)
+        activeFilters = simplifyArr(activeFilters)
+    }
+    if (colourFilter === [] && sizeFilter !== [] && shapeFilter !== []) {
+        activeFilters = [sizeFilter, shapeFilter]
+        activeFilters = simplifyArr(activeFilters)
+        activeFilters = simplifyArr(activeFilters)
+    }
+    if (colourFilter !== [] && sizeFilter !== [] && shapeFilter !== []) {
+        activeFilters = [colourFilter, sizeFilter, shapeFilter]
+        activeFilters = simplifyArr(activeFilters)
+        activeFilters = simplifyArr(activeFilters)
+    }
+
+}
+
+function simplifyArr(arr = []) {
+    const res = []
+    arr.forEach(element => {
+        element.forEach(el => {
+            res.push(el);
+        });
+    });
+    return res;
+}
 
 
 // document.addEventListener("click", function (e) {
@@ -282,10 +372,12 @@ function resetDisplayObjects() {
 
 function init() {
     displayObjects(objects)
+    setActiveFilters()
     resetDisplayObjects()
     launchFilterByColour()
     launchFilterBySize()
     launchFilterByShape()
+
 }
 
 init()
