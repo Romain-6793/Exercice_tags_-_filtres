@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your document</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="fontawesome-free-5.15.4-web/css/all.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body id="body">
+  <h1>Test tri par tags </h1>
+  <div class="dropdown-div">
+    <label for="shape-dropdown">Choisissez la forme</label>
+    <select class="shape-dropdown dropdown">
+      <option value="circle" class="shape-option">Cercle</option>
+      <option value="rectangle" class="shape-option">Rectangle</option>
+      <option value="square" class="shape-option">Carré</option>
+    </select>
+    <label for="colour-dropdown">Choisissez la couleur</label>
+    <select class="colour-dropdown dropdown">
+      <option value="red" class="colour-option">Rouge</option>
+      <option value="orange" class="colour-option">Orange</option>
+      <option value="green" class="colour-option">Vert</option>
+    </select>
+    <label for="size-dropdown">Choisissez la taille</label>
+    <select class="size-dropdown dropdown">
+      <option value="small" class="size-option">Petit</option>
+      <option value="medium" class="size-option">Moyen</option>
+      <option value="large" class="size-option">Grand</option>
+    </select>
+    <button type="button" class="reset-btn">Tout afficher</button>
+  </div>
+  <section class="tags-section">
+    <div class="tag-flex">
+    </div>
+  </section>
+  <section class="objects-section">
+    <div class="os-flex"></div>
+  </section>
+  <script type="module" src="index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+.dropdown {
+   margin-right : 50px;
+   cursor: pointer;
+}
+
+.reset-btn {
+   cursor: pointer;
+}
+
+
+
+.tag-flex {
+   width: 80%;
+   margin: 40px;
+   border: 1px solid black;
+   height: 130px;
+   padding: 10px;
+   display: flex;
+   flex-flow: row wrap;
+   /* align-items: center; */
+}
+
+.tag {
+   border: 1px solid grey;
+   height: 30px;
+   padding: 10px;
+   margin: 5px;
+   border-radius: 5px;
+   display: flex;
+   align-items: center;
+   border-radius: 3px;
+   background: #f2f2f2
+}
+
+.tag i {
+   font-size: 16px;
+   margin-left: 5px;
+}
+
+.close-button {
+   cursor: pointer
+}
+
+
+.objects-section {
+   margin-top: 100px;
+}
+
+.os-flex {
+   width: 100%;
+   display: flex;
+   flex-flow: row wrap;
+}
+
+.flex-objects {
+   margin-right: 50px;
+   margin-bottom: 50px;
+}
+
+.checkbox {
+   position: relative;
+   right: -5000px;
+}
+
+.red-objects {
+   background: red;
+}
+
+.orange-objects {
+   background: orange;
+}
+
+.green-objects {
+   background: green;
+}
+
+.circles {
+   border-radius: 50%;
+}
+
+.small-rectangles {
+   width: 50px;
+   height: 25px;
+}
+
+.medium-rectangles {
+   width: 100px;
+   height: 50px;
+}
+
+.large-rectangles {
+   width: 150px;
+   height: 75px;
+}
+
+.small-squares, .small-circles {
+   width: 50px;
+   height: 50px;
+}
+
+.medium-squares, .medium-circles {
+   width: 100px;
+   height: 100px;
+}
+
+.large-squares, .large-circles {
+   width: 150px;
+   height: 150px;
+   
+}
