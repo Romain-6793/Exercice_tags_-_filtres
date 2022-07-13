@@ -99,9 +99,8 @@ function launchFilterByColour() {
                 redTag.setAttribute("id", "red-tag")
                 tagsArray.push(redTag)
                 console.log(tagsArray)
-
                 tagsArray.forEach((tag) => {
-                    dynamicObjects = filterByTags(dynamicObjects, tag);
+                    dynamicObjects = filterByColourTags(dynamicObjects, tag);
                     console.log(dynamicObjects)
                 });
 
@@ -114,19 +113,37 @@ function launchFilterByColour() {
 
         }
         if (e.target.value === "orange") {
-            orangeFilter(dynamicObjects)
+            // orangeFilter(dynamicObjects)
             if (!document.getElementById("orange-tag")) {
                 const orangeTag = tagFlex.appendChild(createTag("Orange", "orange"))
                 orangeTag.setAttribute("id", "orange-tag")
                 tagsArray.push(orangeTag)
+                console.log(tagsArray)
+                tagsArray.forEach((tag) => {
+                    dynamicObjects = filterByColourTags(dynamicObjects, tag);
+                    console.log(dynamicObjects)
+                });
+
+                changeSection()
+
+                displayObjects(dynamicObjects)
             }
         }
         if (e.target.value === "green") {
-            greenFilter(dynamicObjects)
+            // greenFilter(dynamicObjects)
             if (!document.getElementById("green-tag")) {
                 const greenTag = tagFlex.appendChild(createTag("Vert", "green"))
                 greenTag.setAttribute("id", "green-tag")
                 tagsArray.push(greenTag)
+                console.log(tagsArray)
+                tagsArray.forEach((tag) => {
+                    dynamicObjects = filterByColourTags(dynamicObjects, tag);
+                    console.log(dynamicObjects)
+                });
+
+                changeSection()
+
+                displayObjects(dynamicObjects)
             }
         }
 
@@ -136,29 +153,56 @@ function launchFilterByColour() {
 function launchFilterBySize() {
     sizeDropdown.addEventListener("change", (e) => {
         if (e.target.value === "small") {
-            smallFilter(dynamicObjects)
+            // smallFilter(dynamicObjects)
             if (!document.getElementById("small-tag")) {
                 const smallTag = tagFlex.appendChild(createTag("Petit", "small"))
                 smallTag.setAttribute("id", "small-tag")
                 tagsArray.push(smallTag)
+                console.log(tagsArray)
+                tagsArray.forEach((tag) => {
+                    dynamicObjects = filterBySizeTags(dynamicObjects, tag);
+                    console.log(dynamicObjects)
+                });
+
+                changeSection()
+
+                displayObjects(dynamicObjects)
 
             }
         }
         if (e.target.value === "medium") {
-            mediumFilter(dynamicObjects)
+            // mediumFilter(dynamicObjects)
             if (!document.getElementById("medium-tag")) {
                 const mediumTag = tagFlex.appendChild(createTag("Moyen", "medium"))
                 mediumTag.setAttribute("id", "medium-tag")
                 tagsArray.push(mediumTag)
+                console.log(tagsArray)
+                tagsArray.forEach((tag) => {
+                    dynamicObjects = filterBySizeTags(dynamicObjects, tag);
+                    console.log(dynamicObjects)
+                });
+
+                changeSection()
+
+                displayObjects(dynamicObjects)
 
             }
         }
         if (e.target.value === "large") {
-            largeFilter(dynamicObjects)
+            // largeFilter(dynamicObjects)
             if (!document.getElementById("large-tag")) {
                 const largeTag = tagFlex.appendChild(createTag("Grand", "large"))
                 largeTag.setAttribute("id", "large-tag")
                 tagsArray.push(largeTag)
+                console.log(tagsArray)
+                tagsArray.forEach((tag) => {
+                    dynamicObjects = filterBySizeTags(dynamicObjects, tag);
+                    console.log(dynamicObjects)
+                });
+
+                changeSection()
+
+                displayObjects(dynamicObjects)
 
             }
         }
@@ -169,30 +213,57 @@ function launchFilterBySize() {
 function launchFilterByShape() {
     shapeDropdown.addEventListener("change", (e) => {
         if (e.target.value === "circle") {
-            circleFilter(dynamicObjects)
+            // circleFilter(dynamicObjects)
 
             if (!document.getElementById("circle-tag")) {
                 const circleTag = tagFlex.appendChild(createTag("Cercle", "circle"))
                 circleTag.setAttribute("id", "circle-tag")
                 tagsArray.push(circleTag)
+                console.log(tagsArray)
+                tagsArray.forEach((tag) => {
+                    dynamicObjects = filterByShapeTags(dynamicObjects, tag);
+                    console.log(dynamicObjects)
+                });
+
+                changeSection()
+
+                displayObjects(dynamicObjects)
             }
         }
         if (e.target.value === "rectangle") {
-            rectangleFilter(dynamicObjects)
+            // rectangleFilter(dynamicObjects)
 
             if (!document.getElementById("rectangle-tag")) {
                 const rectangleTag = tagFlex.appendChild(createTag("Rectangle", "rectangle"))
                 rectangleTag.setAttribute("id", "rectangle-tag")
                 tagsArray.push(rectangleTag)
             }
+            console.log(tagsArray)
+            tagsArray.forEach((tag) => {
+                dynamicObjects = filterByShapeTags(dynamicObjects, tag);
+                console.log(dynamicObjects)
+            });
+
+            changeSection()
+
+            displayObjects(dynamicObjects)
         }
         if (e.target.value === "square") {
-            squareFilter(dynamicObjects)
+            // squareFilter(dynamicObjects)
 
             if (!document.getElementById("square-tag")) {
                 const squareTag = tagFlex.appendChild(createTag("Carré", "square"))
                 squareTag.setAttribute("id", "square-tag")
                 tagsArray.push(squareTag)
+                console.log(tagsArray)
+                tagsArray.forEach((tag) => {
+                    dynamicObjects = filterByShapeTags(dynamicObjects, tag);
+                    console.log(dynamicObjects)
+                });
+
+                changeSection()
+
+                displayObjects(dynamicObjects)
             }
         }
 
@@ -446,19 +517,19 @@ function resetDisplayObjects() {
 // }
 
 function filterByColourTags(objectsList, tag) {
-    const result = objectsList.filter((object) => object.colour.includes(tag.dataset.property));
+    const result = objectsList.filter((object) => object.colour.matches(tag.dataset.property));
     return result;
 
 }
 
 function filterByShapeTags(objectsList, tag) {
-    const result = objectsList.filter((object) => object.colour.includes(tag.dataset.property));
+    const result = objectsList.filter((object) => object.colour.matches(tag.dataset.property));
     return result;
 
 }
 
 function filterBySizeTags(objectsList, tag) {
-    const result = objectsList.filter((object) => object.colour.includes(tag.dataset.property));
+    const result = objectsList.filter((object) => object.colour.matches(tag.dataset.property));
     return result;
 
 }
