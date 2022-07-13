@@ -92,13 +92,23 @@ function displayObjects(data) {
 function launchFilterByColour() {
     colourDropdown.addEventListener("change", (e) => {
         if (e.target.value === "red") {
-            redFilter()
+            // redFilter()
 
             if (!document.getElementById("red-tag")) {
                 const redTag = tagFlex.appendChild(createTag("Rouge", "red"))
                 redTag.setAttribute("id", "red-tag")
                 tagsArray.push(redTag)
                 console.log(tagsArray)
+
+                tagsArray.forEach((tag) => {
+                    dynamicObjects = filterByTags(dynamicObjects, tag);
+                    console.log(dynamicObjects)
+                });
+
+                changeSection()
+
+                displayObjects(dynamicObjects)
+
             }
 
 
@@ -192,29 +202,33 @@ function launchFilterByShape() {
 function redFilter() {
     // let redObjects = objArr.filter(littleObj => littleObj.colour === "red")
 
-    console.log(dynamicObjects)
-    console.log(redTag.dataset.property)
-
-    tagsArray.forEach((tag) => {
-        dynamicObjects = filterByTags(dynamicObjects, tag);
+    if (tagsArray.redTag) {
         console.log(dynamicObjects)
-    });
+        console.log(redTag.dataset.property)
 
-    changeSection()
+        tagsArray.forEach((tag) => {
+            dynamicObjects = filterByTags(dynamicObjects, tag);
+            console.log(dynamicObjects)
+        });
 
-    displayObjects(dynamicObjects)
-    // displayObjects(redObjects)
+        changeSection()
 
-    if (colourFilter !== []) {
-        colourFilter = []
+        displayObjects(dynamicObjects)
+        // displayObjects(redObjects)
+
+        if (colourFilter !== []) {
+            colourFilter = []
+        }
+        colourFilter.push(redObjects)
+        console.log(colourFilter)
+        // setActiveFilters()
+        // console.log(activeFilters)
+        // changeSection()
+        // // simplifyArr(activeFilters)
+        // displayObjects(activeFilters)
+
     }
-    colourFilter.push(redObjects)
-    console.log(colourFilter)
-    // setActiveFilters()
-    // console.log(activeFilters)
-    // changeSection()
-    // // simplifyArr(activeFilters)
-    // displayObjects(activeFilters)
+
 
 }
 
@@ -431,11 +445,24 @@ function resetDisplayObjects() {
 //     return res;
 // }
 
-function filterByTags(objectsList, tag) {
-    const result = objectsList.filter((object) => object.includes(tag.dataset.property));
+function filterByColourTags(objectsList, tag) {
+    const result = objectsList.filter((object) => object.colour.includes(tag.dataset.property));
     return result;
 
 }
+
+function filterByShapeTags(objectsList, tag) {
+    const result = objectsList.filter((object) => object.colour.includes(tag.dataset.property));
+    return result;
+
+}
+
+function filterBySizeTags(objectsList, tag) {
+    const result = objectsList.filter((object) => object.colour.includes(tag.dataset.property));
+    return result;
+
+}
+
 
 tagsArray.forEach((tag) => {
     dynamicObjects = filterByTags(dynamicObjects, tag);
