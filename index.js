@@ -12,9 +12,67 @@ const resetBtn = document.querySelector(".reset-btn")
 let colourFilter = []
 let shapeFilter = []
 let sizeFilter = []
-let activeFilters = []
+// let activeFilters = []
 let tagsArray = []
+let dynamicObjects = [...objects]
 
+let filterRedObjects = objects.filter((figure) => figure.colour.includes('red'))
+console.log(filterRedObjects)
+let filterOrangeObjects = objects.filter((figure) => figure.colour.includes('orange'))
+console.log(filterOrangeObjects)
+let filterGreenObjects = objects.filter((figure) => figure.colour.includes('green'))
+console.log(filterGreenObjects)
+let filterCircleObjects = objects.filter((figure) => figure.shape.includes('circle'))
+console.log(filterCircleObjects)
+let filterRecObjects = objects.filter((figure) => figure.shape.includes('rectangle'))
+console.log(filterRecObjects)
+let filterSquareObjects = objects.filter((figure) => figure.shape.includes('square'))
+console.log(filterSquareObjects)
+let filterSObjects = objects.filter((figure) => figure.size.includes('small'))
+console.log(filterSObjects)
+let filterMObjects = objects.filter((figure) => figure.size.includes('medium'))
+console.log(filterMObjects)
+let filterLObjects = objects.filter((figure) => figure.size.includes('large'))
+console.log(filterLObjects)
+
+
+let filterRedCircleObjects = objects.filter((figure) => figure.colour.includes('red') && figure.shape.includes('circle'))
+console.log(filterRedCircleObjects)
+let filterRedRecObjects = objects.filter((figure) => figure.colour.includes('rectangle') && figure.shape.includes('circle'))
+console.log(filterRedRecObjects)
+let filterRedSquareObjects = objects.filter((figure) => figure.colour.includes('rectangle') && figure.shape.includes('circle'))
+console.log(filterRedSquareObjects)
+
+let filterRedSObjects = objects.filter((figure) => figure.colour.includes('red') && figure.size.includes('small'))
+console.log(filterRedSObjects)
+let filterRedMObjects = objects.filter((figure) => figure.colour.includes('rectangle') && figure.size.includes('medium'))
+console.log(filterRedMObjects)
+let filterRedLObjects = objects.filter((figure) => figure.colour.includes('rectangle') && figure.size.includes('large'))
+console.log(filterRedLObjects)
+
+
+let filterRedCircleSObjects = objects.filter((figure) => figure.colour.includes('red') && figure.shape.includes('circle') && figure.size.includes('small'))
+console.log(filterRedCircleSObjects)
+let filterRedCircleMObjects = objects.filter((figure) => figure.colour.includes('red') && figure.shape.includes('circle') && figure.size.includes('medium'))
+console.log(filterRedCircleMObjects)
+let filterRedCircleLObjects = objects.filter((figure) => figure.colour.includes('red') && figure.shape.includes('circle') && figure.size.includes('large'))
+console.log(filterRedCircleLObjects)
+let filterRedRecSObjects = objects.filter((figure) => figure.colour.includes('rectangle') && figure.shape.includes('circle') && figure.size.includes('small'))
+console.log(filterRedRecSObjects)
+let filterRedRecMObjects = objects.filter((figure) => figure.colour.includes('rectangle') && figure.shape.includes('circle') && figure.size.includes('medium'))
+console.log(filterRedRecMObjects)
+let filterRedRecLObjects = objects.filter((figure) => figure.colour.includes('rectangle') && figure.shape.includes('circle') && figure.size.includes('large'))
+console.log(filterRedRecLObjects)
+let filterRedSquareSObjects = objects.filter((figure) => figure.colour.includes('rectangle') && figure.shape.includes('circle') && figure.size.includes('small'))
+console.log(filterRedSquareSObjects)
+let filterRedSquareMObjects = objects.filter((figure) => figure.colour.includes('rectangle') && figure.shape.includes('circle') && figure.size.includes('medium'))
+console.log(filterRedSquareMObjects)
+let filterRedSquareLObjects = objects.filter((figure) => figure.colour.includes('rectangle') && figure.shape.includes('circle') && figure.size.includes('large'))
+console.log(filterRedSquareLObjects)
+
+if (document.getElementById("red-tag")) {
+    console.log("hello")
+}
 
 
 
@@ -23,31 +81,30 @@ function displayObjects(data) {
 
     data.forEach((object) => {
         const objectsSection2 = objectsFactory(object);
-        const userObjects = objectsSection2.getUserObject();
-        objectsSectionFlex.appendChild(userObjects);
+        const userObject = objectsSection2.getUserObject();
+        objectsSectionFlex.appendChild(userObject);
 
     })
+
 }
 
-// function resetTags() {
-//     document.querySelectorAll(".tag").forEach(function (tag) {
-//         tag.parentElement.removeChild(tag)
-//     })
-// }
 
 function launchFilterByColour() {
     colourDropdown.addEventListener("change", (e) => {
         if (e.target.value === "red") {
-            redFilter(objects)
+            redFilter(dynamicObjects)
+
             if (!document.getElementById("red-tag")) {
                 const redTag = tagFlex.appendChild(createTag("Rouge"))
                 redTag.setAttribute("id", "red-tag")
                 tagsArray.push(redTag)
                 console.log(tagsArray)
             }
+
+
         }
         if (e.target.value === "orange") {
-            orangeFilter(objects)
+            orangeFilter(dynamicObjects)
             if (!document.getElementById("orange-tag")) {
                 const orangeTag = tagFlex.appendChild(createTag("Orange"))
                 orangeTag.setAttribute("id", "orange-tag")
@@ -55,7 +112,7 @@ function launchFilterByColour() {
             }
         }
         if (e.target.value === "green") {
-            greenFilter(objects)
+            greenFilter(dynamicObjects)
             if (!document.getElementById("green-tag")) {
                 const greenTag = tagFlex.appendChild(createTag("Vert"))
                 greenTag.setAttribute("id", "green-tag")
@@ -69,7 +126,7 @@ function launchFilterByColour() {
 function launchFilterBySize() {
     sizeDropdown.addEventListener("change", (e) => {
         if (e.target.value === "small") {
-            smallFilter(objects)
+            smallFilter(dynamicObjects)
             if (!document.getElementById("small-tag")) {
                 const smallTag = tagFlex.appendChild(createTag("Petit"))
                 smallTag.setAttribute("id", "small-tag")
@@ -78,7 +135,7 @@ function launchFilterBySize() {
             }
         }
         if (e.target.value === "medium") {
-            mediumFilter(objects)
+            mediumFilter(dynamicObjects)
             if (!document.getElementById("medium-tag")) {
                 const mediumTag = tagFlex.appendChild(createTag("Moyen"))
                 mediumTag.setAttribute("id", "medium-tag")
@@ -87,7 +144,7 @@ function launchFilterBySize() {
             }
         }
         if (e.target.value === "large") {
-            largeFilter(objects)
+            largeFilter(dynamicObjects)
             if (!document.getElementById("large-tag")) {
                 const largeTag = tagFlex.appendChild(createTag("Grand"))
                 largeTag.setAttribute("id", "large-tag")
@@ -102,7 +159,7 @@ function launchFilterBySize() {
 function launchFilterByShape() {
     shapeDropdown.addEventListener("change", (e) => {
         if (e.target.value === "circle") {
-            circleFilter(objects)
+            circleFilter(dynamicObjects)
 
             if (!document.getElementById("circle-tag")) {
                 const circleTag = tagFlex.appendChild(createTag("Cercle"))
@@ -111,7 +168,7 @@ function launchFilterByShape() {
             }
         }
         if (e.target.value === "rectangle") {
-            rectangleFilter(objects)
+            rectangleFilter(dynamicObjects)
 
             if (!document.getElementById("rectangle-tag")) {
                 const rectangleTag = tagFlex.appendChild(createTag("Rectangle"))
@@ -120,7 +177,7 @@ function launchFilterByShape() {
             }
         }
         if (e.target.value === "square") {
-            squareFilter(objects)
+            squareFilter(dynamicObjects)
 
             if (!document.getElementById("square-tag")) {
                 const squareTag = tagFlex.appendChild(createTag("Carré"))
@@ -136,17 +193,20 @@ function redFilter(objArr) {
     let redObjects = objArr.filter(littleObj => littleObj.colour === "red")
 
     changeSection()
+
+
     displayObjects(redObjects)
+
     if (colourFilter !== []) {
         colourFilter = []
     }
     colourFilter.push(redObjects)
     console.log(colourFilter)
-    setActiveFilters()
-    console.log(activeFilters)
-    changeSection()
-    // simplifyArr(activeFilters)
-    displayObjects(activeFilters)
+    // setActiveFilters()
+    // console.log(activeFilters)
+    // changeSection()
+    // // simplifyArr(activeFilters)
+    // displayObjects(activeFilters)
 
 }
 
@@ -154,15 +214,16 @@ function orangeFilter(objArr) {
     let orangeObjects = objArr.filter(littleObj => littleObj.colour === "orange")
 
 
+
     changeSection()
     displayObjects(orangeObjects)
-    if (colourFilter !== []) {
-        colourFilter = []
-    }
-    colourFilter.push(orangeObjects)
-    console.log(colourFilter)
-    setActiveFilters()
-    console.log(activeFilters)
+    // if (colourFilter !== []) {
+    //     colourFilter = []
+    // }
+    // colourFilter.push(orangeObjects)
+    // console.log(colourFilter)
+    // setActiveFilters()
+    // console.log(activeFilters)
 }
 
 function greenFilter(objArr) {
@@ -176,8 +237,8 @@ function greenFilter(objArr) {
     }
     colourFilter.push(greenObjects)
     console.log(colourFilter)
-    setActiveFilters()
-    console.log(activeFilters)
+    // setActiveFilters()
+    // console.log(activeFilters)
 }
 
 function smallFilter(objArr) {
@@ -191,8 +252,8 @@ function smallFilter(objArr) {
     }
     sizeFilter.push(smallObjects)
     console.log(sizeFilter)
-    setActiveFilters()
-    console.log(activeFilters)
+    // setActiveFilters()
+    // console.log(activeFilters)
 }
 
 function mediumFilter(objArr) {
@@ -206,8 +267,8 @@ function mediumFilter(objArr) {
     }
     sizeFilter.push(mediumObjects)
     console.log(sizeFilter)
-    setActiveFilters()
-    console.log(activeFilters)
+    // setActiveFilters()
+    // console.log(activeFilters)
 }
 
 function largeFilter(objArr) {
@@ -221,8 +282,8 @@ function largeFilter(objArr) {
     }
     sizeFilter.push(largeObjects)
     console.log(sizeFilter)
-    setActiveFilters()
-    console.log(activeFilters)
+    // setActiveFilters()
+    // console.log(activeFilters)
 }
 
 function circleFilter(objArr) {
@@ -235,23 +296,22 @@ function circleFilter(objArr) {
     }
     shapeFilter.push(circleObjects)
     console.log(shapeFilter)
-    setActiveFilters()
-    console.log(activeFilters)
+    // setActiveFilters()
+    // console.log(activeFilters)
 }
 
 function rectangleFilter(objArr) {
     let rectangleObjects = objArr.filter(littleObj => littleObj.shape === "rectangle")
-
 
     changeSection()
     displayObjects(rectangleObjects)
     if (shapeFilter !== []) {
         shapeFilter = []
     }
-    shapeFilter.push(rectangleObjects)
-    console.log(shapeFilter)
-    setActiveFilters()
-    console.log(activeFilters)
+    // shapeFilter.push(rectangleObjects)
+    // console.log(shapeFilter)
+    // setActiveFilters()
+    // console.log(activeFilters)
 }
 
 function squareFilter(objArr) {
@@ -265,8 +325,8 @@ function squareFilter(objArr) {
     }
     shapeFilter.push(squareObjects)
     console.log(shapeFilter)
-    setActiveFilters()
-    console.log(activeFilters)
+    // setActiveFilters()
+    // console.log(activeFilters)
 }
 
 function changeSection() {
@@ -305,74 +365,68 @@ resetBtn.addEventListener("click", resetDisplayObjects)
 function resetDisplayObjects() {
     changeSection()
     displayObjects(objects)
+    dynamicObjects = [...objects]
 }
 
-function setActiveFilters() {
-    if (colourFilter === [] && sizeFilter === [] && shapeFilter === []) {
-        activeFilters = []
-        activeFilters = simplifyArr(activeFilters)
-        activeFilters = simplifyArr(activeFilters)
-    }
-    if (colourFilter !== [] && sizeFilter === [] && shapeFilter === []) {
-        activeFilters = [colourFilter]
-        activeFilters = simplifyArr(activeFilters)
-        activeFilters = simplifyArr(activeFilters)
-    }
-    if (colourFilter === [] && sizeFilter !== [] && shapeFilter === []) {
-        activeFilters = [sizeFilter]
-        activeFilters = simplifyArr(activeFilters)
-        activeFilters = simplifyArr(activeFilters)
-    }
-    if (colourFilter === [] && sizeFilter === [] && shapeFilter !== []) {
-        activeFilters = [shapeFilter]
-        activeFilters = simplifyArr(activeFilters)
-        activeFilters = simplifyArr(activeFilters)
-    }
-    if (colourFilter !== [] && sizeFilter !== [] && shapeFilter === []) {
-        activeFilters = [colourFilter, sizeFilter]
-        activeFilters = simplifyArr(activeFilters)
-        activeFilters = simplifyArr(activeFilters)
-    }
-    if (colourFilter !== [] && sizeFilter === [] && shapeFilter !== []) {
-        activeFilters = [colourFilter, shapeFilter]
-        activeFilters = simplifyArr(activeFilters)
-        activeFilters = simplifyArr(activeFilters)
-    }
-    if (colourFilter === [] && sizeFilter !== [] && shapeFilter !== []) {
-        activeFilters = [sizeFilter, shapeFilter]
-        activeFilters = simplifyArr(activeFilters)
-        activeFilters = simplifyArr(activeFilters)
-    }
-    if (colourFilter !== [] && sizeFilter !== [] && shapeFilter !== []) {
-        activeFilters = [colourFilter, sizeFilter, shapeFilter]
-        activeFilters = simplifyArr(activeFilters)
-        activeFilters = simplifyArr(activeFilters)
-    }
-
-}
-
-function simplifyArr(arr = []) {
-    const res = []
-    arr.forEach(element => {
-        element.forEach(el => {
-            res.push(el);
-        });
-    });
-    return res;
-}
-
-
-// document.addEventListener("click", function (e) {
-//     if (e.target.tagName === "I") {
-//         const value = e.target.getAttribute("data-item")
-//         const index = tagsArray.indexOf(value)
-//         tagsArray = [...tagsArray.slice(0, index), ...tagsArray.slice(index + 1)]
+// function setActiveFilters() {
+//     if (colourFilter === [] && sizeFilter === [] && shapeFilter === []) {
+//         activeFilters = []
+//         activeFilters = simplifyArr(activeFilters)
+//         activeFilters = simplifyArr(activeFilters)
 //     }
-// })
+//     if (colourFilter !== [] && sizeFilter === [] && shapeFilter === []) {
+//         activeFilters = [colourFilter]
+//         activeFilters = simplifyArr(activeFilters)
+//         activeFilters = simplifyArr(activeFilters)
+//     }
+//     if (colourFilter === [] && sizeFilter !== [] && shapeFilter === []) {
+//         activeFilters = [sizeFilter]
+//         activeFilters = simplifyArr(activeFilters)
+//         activeFilters = simplifyArr(activeFilters)
+//     }
+//     if (colourFilter === [] && sizeFilter === [] && shapeFilter !== []) {
+//         activeFilters = [shapeFilter]
+//         activeFilters = simplifyArr(activeFilters)
+//         activeFilters = simplifyArr(activeFilters)
+//     }
+//     if (colourFilter !== [] && sizeFilter !== [] && shapeFilter === []) {
+//         activeFilters = [colourFilter, sizeFilter]
+//         activeFilters = simplifyArr(activeFilters)
+//         activeFilters = simplifyArr(activeFilters)
+//     }
+//     if (colourFilter !== [] && sizeFilter === [] && shapeFilter !== []) {
+//         activeFilters = [colourFilter, shapeFilter]
+//         activeFilters = simplifyArr(activeFilters)
+//         activeFilters = simplifyArr(activeFilters)
+//     }
+//     if (colourFilter === [] && sizeFilter !== [] && shapeFilter !== []) {
+//         activeFilters = [sizeFilter, shapeFilter]
+//         activeFilters = simplifyArr(activeFilters)
+//         activeFilters = simplifyArr(activeFilters)
+//     }
+//     if (colourFilter !== [] && sizeFilter !== [] && shapeFilter !== []) {
+//         activeFilters = [colourFilter, sizeFilter, shapeFilter]
+//         activeFilters = simplifyArr(activeFilters)
+//         activeFilters = simplifyArr(activeFilters)
+//     }
+
+// }
+
+// function simplifyArr(arr = []) {
+//     const res = []
+//     arr.forEach(element => {
+//         element.forEach(el => {
+//             res.push(el);
+//         });
+//     });
+//     return res;
+// }
 
 function init() {
-    displayObjects(objects)
-    setActiveFilters()
+    // dynamicObjects.push(objects)
+    console.log(dynamicObjects)
+    displayObjects(dynamicObjects)
+    // setActiveFilters()
     resetDisplayObjects()
     launchFilterByColour()
     launchFilterBySize()

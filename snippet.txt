@@ -1,0 +1,13 @@
+const allObjects = [{object: 'circle', colour: 'red', size: 'small' }, {figure: 'rond', color: 'red', size: 'medium'}, {figure: rond, color: red, size: big },...]
+// que tu filtres en recherchant selon les caractéristiques de tes objects
+let filteredFigures = allFigures.filter((figure)=> figure.colour.includes('red'))
+
+// Tu peux aussi envisagé de donner un id unique à chacun de tes objets qui indiquera ses caractérisques :
+const allFigures = {roresm :{figure: 'rond', color: 'red', size: 'small' }, roremd :{figure: 'rond', color: 'red', size: 'medium'}, rorebg : {figure: rond, color: red, size: big },...}
+
+/*Et finalement là tu vas simplement parcourir les keys de tes objects pour retrouver ce qui contiennent les caract qui t'intéressent : */
+
+let filteredFigures = Object.keys(allFigures).filter((figure)=> figure.includes(ro)) //pour filtrer les rond.
+
+Bon, pour ma part, je te conseillerai d'utiliser un seul tableau pour faire ton rendu
+il faut que ce tableau reflète le résultat de ton filtrage, qui est le resultat de conditions (intersection)
