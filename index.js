@@ -16,59 +16,59 @@ let sizeFilter = []
 let tagsArray = []
 let dynamicObjects = [...objects]
 
-let filterRedObjects = objects.filter((figure) => figure.colour.includes('red'))
-console.log(filterRedObjects)
-let filterOrangeObjects = objects.filter((figure) => figure.colour.includes('orange'))
-console.log(filterOrangeObjects)
-let filterGreenObjects = objects.filter((figure) => figure.colour.includes('green'))
-console.log(filterGreenObjects)
-let filterCircleObjects = objects.filter((figure) => figure.shape.includes('circle'))
-console.log(filterCircleObjects)
-let filterRecObjects = objects.filter((figure) => figure.shape.includes('rectangle'))
-console.log(filterRecObjects)
-let filterSquareObjects = objects.filter((figure) => figure.shape.includes('square'))
-console.log(filterSquareObjects)
-let filterSObjects = objects.filter((figure) => figure.size.includes('small'))
-console.log(filterSObjects)
-let filterMObjects = objects.filter((figure) => figure.size.includes('medium'))
-console.log(filterMObjects)
-let filterLObjects = objects.filter((figure) => figure.size.includes('large'))
-console.log(filterLObjects)
+// let filterRedObjects = objects.filter((figure) => figure.colour.includes('red'))
+// console.log(filterRedObjects)
+// let filterOrangeObjects = objects.filter((figure) => figure.colour.includes('orange'))
+// console.log(filterOrangeObjects)
+// let filterGreenObjects = objects.filter((figure) => figure.colour.includes('green'))
+// console.log(filterGreenObjects)
+// let filterCircleObjects = objects.filter((figure) => figure.shape.includes('circle'))
+// console.log(filterCircleObjects)
+// let filterRecObjects = objects.filter((figure) => figure.shape.includes('rectangle'))
+// console.log(filterRecObjects)
+// let filterSquareObjects = objects.filter((figure) => figure.shape.includes('square'))
+// console.log(filterSquareObjects)
+// let filterSObjects = objects.filter((figure) => figure.size.includes('small'))
+// console.log(filterSObjects)
+// let filterMObjects = objects.filter((figure) => figure.size.includes('medium'))
+// console.log(filterMObjects)
+// let filterLObjects = objects.filter((figure) => figure.size.includes('large'))
+// console.log(filterLObjects)
 
 
-let filterRedCircleObjects = objects.filter((figure) => figure.colour.includes('red') && figure.shape.includes('circle'))
-console.log(filterRedCircleObjects)
-let filterRedRecObjects = objects.filter((figure) => figure.colour.includes('rectangle') && figure.shape.includes('circle'))
-console.log(filterRedRecObjects)
-let filterRedSquareObjects = objects.filter((figure) => figure.colour.includes('rectangle') && figure.shape.includes('circle'))
-console.log(filterRedSquareObjects)
+// let filterRedCircleObjects = objects.filter((figure) => figure.colour.includes('red') && figure.shape.includes('circle'))
+// console.log(filterRedCircleObjects)
+// let filterRedRecObjects = objects.filter((figure) => figure.colour.includes('rectangle') && figure.shape.includes('circle'))
+// console.log(filterRedRecObjects)
+// let filterRedSquareObjects = objects.filter((figure) => figure.colour.includes('rectangle') && figure.shape.includes('circle'))
+// console.log(filterRedSquareObjects)
 
-let filterRedSObjects = objects.filter((figure) => figure.colour.includes('red') && figure.size.includes('small'))
-console.log(filterRedSObjects)
-let filterRedMObjects = objects.filter((figure) => figure.colour.includes('rectangle') && figure.size.includes('medium'))
-console.log(filterRedMObjects)
-let filterRedLObjects = objects.filter((figure) => figure.colour.includes('rectangle') && figure.size.includes('large'))
-console.log(filterRedLObjects)
+// let filterRedSObjects = objects.filter((figure) => figure.colour.includes('red') && figure.size.includes('small'))
+// console.log(filterRedSObjects)
+// let filterRedMObjects = objects.filter((figure) => figure.colour.includes('rectangle') && figure.size.includes('medium'))
+// console.log(filterRedMObjects)
+// let filterRedLObjects = objects.filter((figure) => figure.colour.includes('rectangle') && figure.size.includes('large'))
+// console.log(filterRedLObjects)
 
 
-let filterRedCircleSObjects = objects.filter((figure) => figure.colour.includes('red') && figure.shape.includes('circle') && figure.size.includes('small'))
-console.log(filterRedCircleSObjects)
-let filterRedCircleMObjects = objects.filter((figure) => figure.colour.includes('red') && figure.shape.includes('circle') && figure.size.includes('medium'))
-console.log(filterRedCircleMObjects)
-let filterRedCircleLObjects = objects.filter((figure) => figure.colour.includes('red') && figure.shape.includes('circle') && figure.size.includes('large'))
-console.log(filterRedCircleLObjects)
-let filterRedRecSObjects = objects.filter((figure) => figure.colour.includes('rectangle') && figure.shape.includes('circle') && figure.size.includes('small'))
-console.log(filterRedRecSObjects)
-let filterRedRecMObjects = objects.filter((figure) => figure.colour.includes('rectangle') && figure.shape.includes('circle') && figure.size.includes('medium'))
-console.log(filterRedRecMObjects)
-let filterRedRecLObjects = objects.filter((figure) => figure.colour.includes('rectangle') && figure.shape.includes('circle') && figure.size.includes('large'))
-console.log(filterRedRecLObjects)
-let filterRedSquareSObjects = objects.filter((figure) => figure.colour.includes('rectangle') && figure.shape.includes('circle') && figure.size.includes('small'))
-console.log(filterRedSquareSObjects)
-let filterRedSquareMObjects = objects.filter((figure) => figure.colour.includes('rectangle') && figure.shape.includes('circle') && figure.size.includes('medium'))
-console.log(filterRedSquareMObjects)
-let filterRedSquareLObjects = objects.filter((figure) => figure.colour.includes('rectangle') && figure.shape.includes('circle') && figure.size.includes('large'))
-console.log(filterRedSquareLObjects)
+// let filterRedCircleSObjects = objects.filter((figure) => figure.colour.includes('red') && figure.shape.includes('circle') && figure.size.includes('small'))
+// console.log(filterRedCircleSObjects)
+// let filterRedCircleMObjects = objects.filter((figure) => figure.colour.includes('red') && figure.shape.includes('circle') && figure.size.includes('medium'))
+// console.log(filterRedCircleMObjects)
+// let filterRedCircleLObjects = objects.filter((figure) => figure.colour.includes('red') && figure.shape.includes('circle') && figure.size.includes('large'))
+// console.log(filterRedCircleLObjects)
+// let filterRedRecSObjects = objects.filter((figure) => figure.colour.includes('rectangle') && figure.shape.includes('circle') && figure.size.includes('small'))
+// console.log(filterRedRecSObjects)
+// let filterRedRecMObjects = objects.filter((figure) => figure.colour.includes('rectangle') && figure.shape.includes('circle') && figure.size.includes('medium'))
+// console.log(filterRedRecMObjects)
+// let filterRedRecLObjects = objects.filter((figure) => figure.colour.includes('rectangle') && figure.shape.includes('circle') && figure.size.includes('large'))
+// console.log(filterRedRecLObjects)
+// let filterRedSquareSObjects = objects.filter((figure) => figure.colour.includes('rectangle') && figure.shape.includes('circle') && figure.size.includes('small'))
+// console.log(filterRedSquareSObjects)
+// let filterRedSquareMObjects = objects.filter((figure) => figure.colour.includes('rectangle') && figure.shape.includes('circle') && figure.size.includes('medium'))
+// console.log(filterRedSquareMObjects)
+// let filterRedSquareLObjects = objects.filter((figure) => figure.colour.includes('rectangle') && figure.shape.includes('circle') && figure.size.includes('large'))
+// console.log(filterRedSquareLObjects)
 
 if (document.getElementById("red-tag")) {
     console.log("hello")
@@ -92,10 +92,10 @@ function displayObjects(data) {
 function launchFilterByColour() {
     colourDropdown.addEventListener("change", (e) => {
         if (e.target.value === "red") {
-            redFilter(dynamicObjects)
+            redFilter()
 
             if (!document.getElementById("red-tag")) {
-                const redTag = tagFlex.appendChild(createTag("Rouge"))
+                const redTag = tagFlex.appendChild(createTag("Rouge", "red"))
                 redTag.setAttribute("id", "red-tag")
                 tagsArray.push(redTag)
                 console.log(tagsArray)
@@ -106,7 +106,7 @@ function launchFilterByColour() {
         if (e.target.value === "orange") {
             orangeFilter(dynamicObjects)
             if (!document.getElementById("orange-tag")) {
-                const orangeTag = tagFlex.appendChild(createTag("Orange"))
+                const orangeTag = tagFlex.appendChild(createTag("Orange", "orange"))
                 orangeTag.setAttribute("id", "orange-tag")
                 tagsArray.push(orangeTag)
             }
@@ -114,7 +114,7 @@ function launchFilterByColour() {
         if (e.target.value === "green") {
             greenFilter(dynamicObjects)
             if (!document.getElementById("green-tag")) {
-                const greenTag = tagFlex.appendChild(createTag("Vert"))
+                const greenTag = tagFlex.appendChild(createTag("Vert", "green"))
                 greenTag.setAttribute("id", "green-tag")
                 tagsArray.push(greenTag)
             }
@@ -128,7 +128,7 @@ function launchFilterBySize() {
         if (e.target.value === "small") {
             smallFilter(dynamicObjects)
             if (!document.getElementById("small-tag")) {
-                const smallTag = tagFlex.appendChild(createTag("Petit"))
+                const smallTag = tagFlex.appendChild(createTag("Petit", "small"))
                 smallTag.setAttribute("id", "small-tag")
                 tagsArray.push(smallTag)
 
@@ -137,7 +137,7 @@ function launchFilterBySize() {
         if (e.target.value === "medium") {
             mediumFilter(dynamicObjects)
             if (!document.getElementById("medium-tag")) {
-                const mediumTag = tagFlex.appendChild(createTag("Moyen"))
+                const mediumTag = tagFlex.appendChild(createTag("Moyen", "medium"))
                 mediumTag.setAttribute("id", "medium-tag")
                 tagsArray.push(mediumTag)
 
@@ -146,7 +146,7 @@ function launchFilterBySize() {
         if (e.target.value === "large") {
             largeFilter(dynamicObjects)
             if (!document.getElementById("large-tag")) {
-                const largeTag = tagFlex.appendChild(createTag("Grand"))
+                const largeTag = tagFlex.appendChild(createTag("Grand", "large"))
                 largeTag.setAttribute("id", "large-tag")
                 tagsArray.push(largeTag)
 
@@ -162,7 +162,7 @@ function launchFilterByShape() {
             circleFilter(dynamicObjects)
 
             if (!document.getElementById("circle-tag")) {
-                const circleTag = tagFlex.appendChild(createTag("Cercle"))
+                const circleTag = tagFlex.appendChild(createTag("Cercle", "circle"))
                 circleTag.setAttribute("id", "circle-tag")
                 tagsArray.push(circleTag)
             }
@@ -171,7 +171,7 @@ function launchFilterByShape() {
             rectangleFilter(dynamicObjects)
 
             if (!document.getElementById("rectangle-tag")) {
-                const rectangleTag = tagFlex.appendChild(createTag("Rectangle"))
+                const rectangleTag = tagFlex.appendChild(createTag("Rectangle", "rectangle"))
                 rectangleTag.setAttribute("id", "rectangle-tag")
                 tagsArray.push(rectangleTag)
             }
@@ -180,7 +180,7 @@ function launchFilterByShape() {
             squareFilter(dynamicObjects)
 
             if (!document.getElementById("square-tag")) {
-                const squareTag = tagFlex.appendChild(createTag("Carré"))
+                const squareTag = tagFlex.appendChild(createTag("Carré", "square"))
                 squareTag.setAttribute("id", "square-tag")
                 tagsArray.push(squareTag)
             }
@@ -189,13 +189,21 @@ function launchFilterByShape() {
     })
 }
 
-function redFilter(objArr) {
-    let redObjects = objArr.filter(littleObj => littleObj.colour === "red")
+function redFilter() {
+    // let redObjects = objArr.filter(littleObj => littleObj.colour === "red")
+
+    console.log(dynamicObjects)
+    console.log(redTag.dataset.property)
+
+    tagsArray.forEach((tag) => {
+        dynamicObjects = filterByTags(dynamicObjects, tag);
+        console.log(dynamicObjects)
+    });
 
     changeSection()
 
-
-    displayObjects(redObjects)
+    displayObjects(dynamicObjects)
+    // displayObjects(redObjects)
 
     if (colourFilter !== []) {
         colourFilter = []
@@ -333,9 +341,10 @@ function changeSection() {
     objectsSectionFlex.innerHTML = ""
 }
 
-function createTag(label) {
+function createTag(label, dataProperty) {
     const div = document.createElement("div")
     div.setAttribute("class", "tag")
+    div.setAttribute("data-property", dataProperty)
     const span = document.createElement("span")
     span.innerHTML = label
     const closeBtn = document.createElement("i")
@@ -421,6 +430,17 @@ function resetDisplayObjects() {
 //     });
 //     return res;
 // }
+
+function filterByTags(objectsList, tag) {
+    const result = objectsList.filter((object) => object.includes(tag.dataset.property));
+    return result;
+
+}
+
+tagsArray.forEach((tag) => {
+    dynamicObjects = filterByTags(dynamicObjects, tag);
+    console.log(dynamicObjects)
+});
 
 function init() {
     // dynamicObjects.push(objects)
